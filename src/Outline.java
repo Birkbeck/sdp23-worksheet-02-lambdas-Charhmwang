@@ -65,20 +65,28 @@ public class Outline {
     System.out.println("1.4:" + Arrays.asList(words));
   }
 
+  // Rewrite the final lambda sorting example,
+  // but use a method reference in place of an explicit lambda.
   public static void question_2() {
     String[] words = getWords();
     Arrays.sort(words, StringUtils::echecker);
     System.out.println("2: " + Arrays.asList(words));
   }
 
+  // Create a class with a static method called betterString which should take two Strings
+  // and a lambda as its arguments;
   public static void question_3() {
+    System.out.print("3: ");
     String test1 = "Software Design Programming";
     String test2 = "SDP";
     System.out.println(StringUtils.betterString(test1, test2, (s1, s2) -> (s1.length() < s2.length())));
     System.out.println(StringUtils.betterString(test1, test2, (s1, s2) -> true));
   }
 
+  // Use generics to replace betterString with betterEntry and to
+  // replace TwoStringPredicate with TwoElementPredicate.
   public static void question_4() {
+    System.out.print("4: ");
     String test1 = "Software Design Programming";
     String test2 = "SDP";
     System.out.println(StringUtils.betterElement(test1, test2, (s1, s2) -> s1.length() < s2.length()));
@@ -90,11 +98,24 @@ public class Outline {
     System.out.println(StringUtils.betterElement(i1, i2, (a, b) -> true));
   }
 
+  // Create a static method called allMatches. It should take a List of Strings and a
+  // Predicate<String>, and return a new List of all the values that passed the test.
   public static void question_5() {
+    System.out.print("5: ");
     List<String> words = List.of(getWords());
     System.out.println(StringUtils.allMatches(words, s -> s.length() < 4));
     System.out.println(StringUtils.allMatches(words, s -> s.contains("b")));
     System.out.println(StringUtils.allMatches(words, s -> (s.length() % 2) == 0));
+  }
+
+  // Rewrite allMatches so that it works on any List and associated Predicate,
+  // not just on Strings. Verify that the examples from the previous question still work.
+  public static void question_6() {
+    System.out.print("6: ");
+    List<String> words = List.of(getWords());
+    System.out.println(StringUtils.allTypeMatches(words, s -> s.length() < 4));
+    System.out.println(StringUtils.allTypeMatches(words, s -> s.contains("b")));
+    System.out.println(StringUtils.allTypeMatches(words, s -> (s.length() % 2) == 0));
   }
 
   public static void main(String...args) {
@@ -107,5 +128,6 @@ public class Outline {
       question_3();
       question_4();
       question_5();
+      question_6();
   }
 }

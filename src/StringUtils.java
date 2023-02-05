@@ -25,4 +25,13 @@ public class StringUtils {
         }
         return res;
     }
+
+    public static <T> List<T> allTypeMatches(List<T> lst, Predicate<T> lambda) {
+        List<T> res = new ArrayList<>();
+        for (T e : lst) {
+            if (lambda.test(e))
+                res.add(e);
+        }
+        return res;
+    }
 }
