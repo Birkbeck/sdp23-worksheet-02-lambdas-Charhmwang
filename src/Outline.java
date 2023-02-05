@@ -40,7 +40,7 @@ public class Outline {
     Arrays.sort(words, Comparator.comparingInt(String::length).reversed());
     // Alternatively
     // Arrays.sort(words, (a, b) -> Integer.compare(b.length(), a.length()));
-    System.out.println("1.1: " + Arrays.asList(words));
+    System.out.println("1.2: " + Arrays.asList(words));
   }
 
   // Sort the array by comparing first character
@@ -49,6 +49,7 @@ public class Outline {
     Arrays.sort(words, Comparator.comparingInt(a -> a.charAt(0)));
     // Alternatively
     // Arrays.sort(words, (a, b) -> Integer.compare(a.charAt(0), b.charAt(0)));
+    System.out.println("1.3: " + Arrays.asList(words));
   }
 
   // Sort the array by Strings that contain `"e"` first, everything else second.
@@ -62,7 +63,11 @@ public class Outline {
     System.out.println("1.4:" + Arrays.asList(words));
   }
 
-
+  public static void question_2() {
+    String[] words = getWords();
+    Arrays.sort(words, StringUtils::echecker);
+    System.out.println("2: " + Arrays.asList(words));
+  }
 
   public static void main(String...args) {
 
@@ -70,5 +75,6 @@ public class Outline {
       question_1_2();
       question_1_3();
       question_1_4();
+      question_2();
   }
 }
