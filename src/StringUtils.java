@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
 public class StringUtils {
     public static int echecker(String s1, String s2) {
         if (s1.contains("e") & !s2.contains("e")) return -1;
@@ -11,5 +15,14 @@ public class StringUtils {
 
     public static <T> T betterElement(T e1, T e2, TwoElementPredicate<T> lambda) { // Don't forget <T> after TwoElementPredicate
         return lambda.findBest(e1, e2) ? e1 : e2;
+    }
+
+    public static List<String> allMatches(List<String> strList, Predicate<String> lambda) {
+        List<String> res = new ArrayList<>();
+        for (String s : strList) {
+            if (lambda.test(s))
+                res.add(s);
+        }
+        return res;
     }
 }

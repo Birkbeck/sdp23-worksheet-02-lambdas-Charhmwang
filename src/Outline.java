@@ -1,5 +1,7 @@
+import javax.swing.text.Utilities;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 public class Outline {
 
@@ -88,7 +90,12 @@ public class Outline {
     System.out.println(StringUtils.betterElement(i1, i2, (a, b) -> true));
   }
 
-
+  public static void question_5() {
+    List<String> words = List.of(getWords());
+    System.out.println(StringUtils.allMatches(words, s -> s.length() < 4));
+    System.out.println(StringUtils.allMatches(words, s -> s.contains("b")));
+    System.out.println(StringUtils.allMatches(words, s -> (s.length() % 2) == 0));
+  }
 
   public static void main(String...args) {
 
@@ -99,5 +106,6 @@ public class Outline {
       question_2();
       question_3();
       question_4();
+      question_5();
   }
 }
