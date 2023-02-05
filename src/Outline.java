@@ -69,6 +69,15 @@ public class Outline {
     System.out.println("2: " + Arrays.asList(words));
   }
 
+  public static void question_3() {
+    String test1 = "Software Design Programming";
+    String test2 = "SDP";
+    System.out.println(StringUtils.betterString(test1, test2, (s1, s2) -> (s1.length() < s2.length())));
+    System.out.println(StringUtils.betterString(test1, test2, (s1, s2) -> true));
+  }
+
+
+
   public static void main(String...args) {
 
       question_1_1();
@@ -76,5 +85,6 @@ public class Outline {
       question_1_3();
       question_1_4();
       question_2();
+      question_3();
   }
 }
