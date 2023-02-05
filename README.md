@@ -2,9 +2,11 @@
 
 ## Lambda expressions in Java
 
-+ As with the previous worksheet this set of exercises examines your existing knowledge to reinforce the concepts from your previous studies.
++ As with the previous worksheet this set of exercises examines your existing knowledge to reinforce the concepts 
++ from your previous studies.
 + It is essential that you commit regularly any changes to your source code (to the respective `GitHub Classroom` repository).
-+ Where the questions make incremental changes to the code you **do not** need to keep separate versions of your code, as your commits will deal with that situation. 
++ Where the questions make incremental changes to the code you **do not** need to keep separate versions of your code, 
++ as your commits will deal with that situation. 
 + Text based questions should be answered inline by modifying this document.
 
 ## Learning goals
@@ -24,11 +26,15 @@ You should be able to finish most of the non-star exercises during the lab sessi
 
 ## Preamble
 
-The `Arrays` class provides a number of static utility methods for manipulating arrays. For example, to print out an array, we could utilise `Arrays.asList`. 
+The `Arrays` class provides a number of static utility methods for manipulating arrays. For example, 
+to print out an array, we could utilise `Arrays.asList`. 
 
-The point of this is that if you just print an array directly, you do not see anything useful (just the type and memory address), but if you print a `List`, it shows the individual elements separated by commas (it is simpler than creating a loop to traverse the array and print out the elements).
+The point of this is that if you just print an array directly, you do not see anything useful (just the type and 
+memory address), but if you print a `List`, it shows the individual elements separated by commas 
+(it is simpler than creating a loop to traverse the array and print out the elements).
 
-The following exercises presume that you have a main class containing an array which you then pass to the `Arrays.sort` method. For example, initially the class might look something like the following:
+The following exercises presume that you have a main class containing an array which you then pass to the 
+`Arrays.sort` method. For example, initially the class might look something like the following:
 
 ```java
 import java.util.Arrays;
@@ -52,9 +58,12 @@ All of the exercises should be answered using Java 17 lambda expressions unless 
 	+ first character
 	+ Strings that contain `"e"` first, everything else second.
 	
-  Remember that the `compare` method of `Comparator` should return a negative number  if the first entry is less than the second, a positive number if the first entry is greater than the second, and 0 if they are the same. See the `JavaDoc` API for details.
+  Remember that the `compare` method of `Comparator` should return a negative number  if the first entry is less
+  than the second, a positive number if the first entry is greater than the second, and 0 if they are the same. 
+  See the `JavaDoc` API for details.
   
-2. For the last sorting example (strings with `"e"` first), move the logic that computes the number to a separate `static` method. For example,
+2. For the last sorting example (strings with `"e"` first), move the logic that computes the number to 
+a separate `static` method. For example,
   
    ```java
    StringUtils.eChecker(s1, s2)
@@ -66,11 +75,17 @@ All of the exercises should be answered using Java 17 lambda expressions unless 
    
    Now, rewrite the final lambda sorting example, but use a method reference in place of an explicit lambda.
    
-3.  Create a class with a `static` method called `betterString` which should take two `String`s and a lambda as its arguments; the lambda states whether the first of the two strings is *better*. The method should return the *better* string; i.e., if the lambda returns `true` the method should return the first string, otherwise it should return the second string.
+3. Create a class with a `static` method called `betterString` which should take two `String`s and a lambda 
+as its arguments; the lambda states whether the first of the two strings is *better*. 
+The method should return the *better* string; 
+i.e., if the lambda returns `true` the method should return the first string, 
+otherwise it should return the second string.
       
-      For the lambda, define an interface called `TwoStringPredicate` with a method that takes two `String`s and returns `true` if the first is better than the second, `false` otherwise.
+For the lambda, define an interface called `TwoStringPredicate` with a method that takes two `String`s and 
+returns `true` if the first is better than the second, `false` otherwise.
    
-      Here are two examples (the first returns whichever of `test1` and `test2` is longer, and the second always returns `test1`):
+    Here are two examples (the first returns whichever of `test1` and `test2` is longer,
+    and the second always returns `test1`):T
       
   + `StringUtils.betterString(test1, test2, (s1, s2) -> s1.length() > s2.length())`
   + `StringUtils.betterString(test1, test2, (s1, s2) -> true)`

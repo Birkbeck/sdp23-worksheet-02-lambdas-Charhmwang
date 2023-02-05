@@ -76,6 +76,18 @@ public class Outline {
     System.out.println(StringUtils.betterString(test1, test2, (s1, s2) -> true));
   }
 
+  public static void question_4() {
+    String test1 = "Software Design Programming";
+    String test2 = "SDP";
+    System.out.println(StringUtils.betterElement(test1, test2, (s1, s2) -> s1.length() < s2.length()));
+    System.out.println(StringUtils.betterElement(test1, test2, (s1, s2) -> true));
+
+    int i1 = 100;
+    int i2 = 50;
+    System.out.println(StringUtils.betterElement(i1, i2, (a, b) -> a < b));
+    System.out.println(StringUtils.betterElement(i1, i2, (a, b) -> true));
+  }
+
 
 
   public static void main(String...args) {
@@ -86,5 +98,6 @@ public class Outline {
       question_1_4();
       question_2();
       question_3();
+      question_4();
   }
 }
