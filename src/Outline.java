@@ -125,6 +125,15 @@ public class Outline {
     System.out.println(StringUtils.transformedList(words, s -> s.replace("i", "eye")));
     System.out.println(StringUtils.transformedList(words, String::toUpperCase));
   }
+
+  public static void question_8() {
+    System.out.print("8: ");
+    List<String> words = List.of(getWords());
+    System.out.println(StringUtils.transformedAllList(words, s -> s + "!"));
+    System.out.println(StringUtils.transformedAllList(words, s -> s.replace("i", "eye")));
+    System.out.println(StringUtils.transformedAllList(words, String::toUpperCase));
+  }
+
   public static void main(String...args) {
 
       question_1_1();
@@ -137,5 +146,6 @@ public class Outline {
       question_5();
       question_6();
       question_7();
+      question_8();
   }
 }

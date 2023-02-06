@@ -43,4 +43,13 @@ public class StringUtils {
         }
         return res;
     }
+
+    public static <T> List<T> transformedAllList(List<T> lst, Function<T,T> function) {
+        List<T> res = new ArrayList<>();
+        for (T s : lst) {
+            res.add(function.apply(s));
+        }
+        return res;
+    }
+
 }
