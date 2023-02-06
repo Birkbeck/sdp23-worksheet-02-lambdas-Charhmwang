@@ -118,6 +118,13 @@ public class Outline {
     System.out.println(StringUtils.allTypeMatches(words, s -> (s.length() % 2) == 0));
   }
 
+  public static void question_7() {
+    System.out.print("7: ");
+    List<String> words = List.of(getWords());
+    System.out.println(StringUtils.transformedList(words, s -> s + "!"));
+    System.out.println(StringUtils.transformedList(words, s -> s.replace("i", "eye")));
+    System.out.println(StringUtils.transformedList(words, String::toUpperCase));
+  }
   public static void main(String...args) {
 
       question_1_1();
@@ -129,5 +136,6 @@ public class Outline {
       question_4();
       question_5();
       question_6();
+      question_7();
   }
 }

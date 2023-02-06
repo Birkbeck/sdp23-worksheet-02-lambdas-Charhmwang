@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class StringUtils {
@@ -31,6 +32,14 @@ public class StringUtils {
         for (T e : lst) {
             if (lambda.test(e))
                 res.add(e);
+        }
+        return res;
+    }
+
+    public static List<String> transformedList(List<String> lst, Function<String,String> function) {
+        List<String> res = new ArrayList<>();
+        for (String s : lst) {
+            res.add(function.apply(s));
         }
         return res;
     }
